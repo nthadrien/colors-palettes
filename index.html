@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="./styles/picker.css" />
+  </head>
+  <body>
+    <!-- nav bar -->
+    <nav>
+      <h2>Color Picker v0.1.0</h2>
+
+      <button id="hamburger"></button>
+
+      <div class="nav-menu">
+        <a href="/">Palette Generator</a>
+        <a href="/picture.html">Picture Color</a>
+        <a href="/converter.html">Converter Color</a>
+        <a href="/about.html">About Color</a>
+        <a href="/"> Contact us</a>
+      </div>
+    </nav>
+
+    <!-- main body -->
+    <main>
+      <div class="card">
+        <div id="main-color" class="box"></div>
+        H
+        <input name="hue" type="range" value="0" min="0" max="360" />
+        <input name="hue" type="number" value="0" min="0" max="360" />
+        S
+        <input name="saturation" type="range" value="50" min="0" max="100" />
+        <input name="saturation" type="number" value="50" min="0" max="100" />
+        L
+        <input name="light" type="range" value="50" min="0" max="100" />
+        <input name="light" type="number" value="0" min="0" max="100" />
+      </div>
+
+      <section>
+        <section>
+          <h2>Choose Color Scheme</h2>
+
+          <div class="flexo">
+            <label>
+              monochrome
+              <input type="radio" name="scheme" value="monochrome" checked
+            /></label>
+            <label>
+              analogous <input type="radio" name="scheme" value="analogous"
+            /></label>
+            <label>
+              complementary
+              <input type="radio" name="scheme" value="complementary"
+            /></label>
+            <label>
+              split-complementary
+              <input type="radio" name="scheme" value="split-complementary"
+            /></label>
+            <label>
+              triadic (triangule)
+              <input type="radio" name="scheme" value="triadic"
+            /></label>
+            <label>
+              tetradic (square)
+              <input type="radio" name="scheme" value="tetriadic"
+            /></label>
+            <label>
+              rectangular (rectangle)
+              <input type="radio" name="scheme" value="rectangle"
+            /></label>
+          </div>
+        </section>
+
+        <!-- Color Scheme Results -->
+        <section>
+          <h2>Results</h2>
+          <div id="results"></div>
+        </section>
+
+        <!-- Popup Info -->
+        <section>
+          <h2>Did you know?</h2>
+          <p>Each color scheme has it's used cases, pros and cons</p>
+          <button id="scheme-details">Learn more on this scheme ?</button>
+        </section>
+
+        <!-- Color Scheme Variations -->
+        <section>
+        <h2>Tones & Shades Variations</h2>
+        <p>Color > Pastel > Earth > Jewel > Fluorescent > Neutral > shade</p>
+        <div id="variations">
+          <div class="box">#3333</div>
+          <div class="box">#3333</div>
+          <div class="box">#3333</div>
+          <div class="box">#3333</div>
+          <div class="box">#3333</div>
+          <div class="box">#3333</div>
+          <div class="box">#3333</div>
+          <div class="box">#3333</div>
+          <div class="box">#3333</div>
+          <div class="box">#3333</div>
+          <div class="box">#3333</div>
+          <div class="box">#3333</div>
+        </div>
+      </section>
+
+        <section>
+          <h2>Hints for apps:</h2>
+          <p>Combination 1: Pastels + Earth tones<br/>
+          Combination 2: Jewel + Pastel tones<br/>
+          Combination 3: Shade + Pastel tones<br/>
+          Combination 4: Neutral + Earth tones<br/>
+          Combination 5: Fluorescent + Shade tones</p>
+        </section>
+
+      </section>
+    </main>
+
+    <footer>
+      &copy; Copyrights - All rights reserved <i>intuitive axis</i> 2024-2025
+    </footer>
+  </body>
+  <script src="./scripts/app.js" type="module" defer></script>
+  <script src="./scripts/nav.js" type="module" defer></script>
+  <script src="./scripts/schemeDetails.js" type="module" defer></script>
+</html>
