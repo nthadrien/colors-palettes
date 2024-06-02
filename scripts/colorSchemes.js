@@ -14,7 +14,7 @@ export function generateAnaloguePalette(h, s, l) {
   let h1,
     h2 = 0;
 
-  h1 = h - 30 > 0 ? h - 30 : (360 + (h - 30)) % 360;
+  h1 = (h - 30) > 0 ? h - 30 : (360 + (h - 30)) % 360;
   h2 = (h + 30) % 360;
   palette[1] = [h, s, l];
   palette[0] = [h1, s, l];

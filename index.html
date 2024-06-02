@@ -10,38 +10,50 @@
   <body>
     <!-- nav bar -->
     <nav>
-      <h2>Color Picker v0.1.0</h2>
-
+      <h2>C-Picker v0.1.2</h2>
       <button id="hamburger"></button>
-
-      <div class="nav-menu">
-        <a href="/">Palette Generator</a>
-        <a href="/picture.html">Picture Color</a>
-        <a href="/converter.html">Converter Color</a>
-        <a href="/about.html">About Color</a>
-        <a href="/"> Contact us</a>
-      </div>
     </nav>
+    <div class="nav-menu">
+      <a href="/">Palette Generator</a>
+      <a href="/picture.html">Picture Color</a>
+      <a href="/converter.html">Converter Color</a>
+      <a href="/about.html">About Color</a>
+      <a href="/"> Contact us</a>
+    </div>
 
     <!-- main body -->
     <main>
       <div class="card">
         <div id="main-color" class="box"></div>
-        H
+        <span>H</span>
         <input name="hue" type="range" value="0" min="0" max="360" />
         <input name="hue" type="number" value="0" min="0" max="360" />
-        S
-        <input name="saturation" type="range" value="50" min="0" max="100" />
-        <input name="saturation" type="number" value="50" min="0" max="100" />
-        L
+        <span>S</span>
+        <input name="saturation" type="range" value="90" min="0" max="100" />
+        <input name="saturation" type="number" value="90" min="0" max="100" />
+        <span>L</span>
         <input name="light" type="range" value="50" min="0" max="100" />
         <input name="light" type="number" value="0" min="0" max="100" />
+
+        <button id="refresh" title="refresh" class="btn" style="margin-left: 1rem">↺</button>
+        <button id="generate" title="generate colors" class="btn" style="margin-left: 1rem">Generate</button>
       </div>
 
       <section>
-        <section>
-          <h2>Choose Color Scheme</h2>
 
+        <!-- Color Scheme Variations -->
+        <section>
+          <h2>Tones & Shades Variations</h2>
+          <div id="variations">
+            <div class="box">#3333</div>
+            <div class="box">#3333</div>
+            <div class="box">#3333</div>
+            <div class="box">#3333</div>
+          </div>
+        </section>
+
+        <section>
+          <h2>Select the Color Scheme</h2>
           <div class="flexo">
             <label>
               monochrome
@@ -73,12 +85,6 @@
           </div>
         </section>
 
-        <!-- Color Scheme Results -->
-        <section>
-          <h2>Results</h2>
-          <div id="results"></div>
-        </section>
-
         <!-- Popup Info -->
         <section>
           <h2>Did you know?</h2>
@@ -86,35 +92,28 @@
           <button id="scheme-details">Learn more on this scheme ?</button>
         </section>
 
-        <!-- Color Scheme Variations -->
+        <!-- Color Scheme Results -->
         <section>
-        <h2>Tones & Shades Variations</h2>
-        <p>Color > Pastel > Earth > Jewel > Fluorescent > Neutral > shade</p>
-        <div id="variations">
-          <div class="box">#3333</div>
-          <div class="box">#3333</div>
-          <div class="box">#3333</div>
-          <div class="box">#3333</div>
-          <div class="box">#3333</div>
-          <div class="box">#3333</div>
-          <div class="box">#3333</div>
-          <div class="box">#3333</div>
-          <div class="box">#3333</div>
-          <div class="box">#3333</div>
-          <div class="box">#3333</div>
-          <div class="box">#3333</div>
-        </div>
-      </section>
+          <h2>Results Default</h2>
+          <div id="results"></div>
+        </section>
+
+        <section>
+          <h2>Results from Variations</h2>
+          <button id="propose" class="btn">Propose variations ?</button>
+          <section id="proposals"></section>
+        </section>
 
         <section>
           <h2>Hints for apps:</h2>
-          <p>Combination 1: Pastels + Earth tones<br/>
-          Combination 2: Jewel + Pastel tones<br/>
-          Combination 3: Shade + Pastel tones<br/>
-          Combination 4: Neutral + Earth tones<br/>
-          Combination 5: Fluorescent + Shade tones</p>
+          <p>
+            Combination 1: Pastels + Earth tones<br />
+            Combination 2: Jewel + Pastel tones<br />
+            Combination 3: Shade + Pastel tones<br />
+            Combination 4: Neutral + Earth tones<br />
+            Combination 5: Fluorescent + Shade tones
+          </p>
         </section>
-
       </section>
     </main>
 

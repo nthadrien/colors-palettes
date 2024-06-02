@@ -6,6 +6,8 @@ import {
   hslToRgb,
 } from "./conversions.js";
 
+import { generateShades, generateVariations } from "./generateVariations.js";
+
 import {
   generateAnaloguePalette,
   generateMonochromePalette,
@@ -16,8 +18,9 @@ import {
   generateRectanglePalette,
 } from "./colorSchemes.js";
 import { generateTones } from "./generateTones.js";
+import { colorSort } from "./sortingColors.js";
 
-var GlobalColor = [0, 50, 50];
+var GlobalColor = [0, 90, 50];
 var GlobalPallete = [];
 var GlobalScheme = "monochrome";
 
@@ -70,48 +73,29 @@ const schemes = document.getElementsByName("scheme");
 schemes.forEach((elt) =>
   elt.addEventListener("change", (e) => {
     let paletto = [];
-    if (e.target.value === "monochrome")
-      paletto = generateMonochromePalette(
-        GlobalColor[0],
-        GlobalColor[1],
-        GlobalColor[2]
-      );
-    if (e.target.value === "analogous")
-      paletto = generateAnaloguePalette(
-        GlobalColor[0],
-        GlobalColor[1],
-        GlobalColor[2]
-      );
-    if (e.target.value === "complementary")
-      paletto = generateComplementaryPalette(
-        GlobalColor[0],
-        GlobalColor[1],
-        GlobalColor[2]
-      );
-    if (e.target.value === "split-complementary")
-      paletto = generateSplitComplementaryPalette(
-        GlobalColor[0],
-        GlobalColor[1],
-        GlobalColor[2]
-      );
-    if (e.target.value === "triadic")
-      paletto = generateTriadicPalette(
-        GlobalColor[0],
-        GlobalColor[1],
-        GlobalColor[2]
-      );
-    if (e.target.value === "tetriadic")
-      paletto = generateTetriadicPalette(
-        GlobalColor[0],
-        GlobalColor[1],
-        GlobalColor[2]
-      );
-    if (e.target.value === "rectangle")
-      paletto = generateRectanglePalette(
-        GlobalColor[0],
-        GlobalColor[1],
-        GlobalColor[2]
-      );
+    switch (e.target.value) {
+      case "analogous":
+        paletto = generateAnaloguePalette(...GlobalColor);
+        break;
+      case "monochrome":
+        paletto = generateMonochromePalette(...GlobalColor);
+        break;
+      case "complementary":
+        paletto = generateComplementaryPalette(...GlobalColor);
+        break;
+      case "split-complementary":
+        paletto = generateSplitComplementaryPalette(...GlobalColor);
+        break;
+      case "triadic":
+        paletto = generateTriadicPalette(...GlobalColor);
+        break;
+      case "tetriadic":
+        paletto = generateTetriadicPalette(...GlobalColor);
+        break;
+      case "rectangle":
+        paletto = generateRectanglePalette(...GlobalColor);
+        break;
+    }
     GlobalScheme = e.target.value;
     drawColors(paletto);
   })
@@ -126,38 +110,86 @@ function drawColors(colors) {
     const clrRGB = hslToRgb(color[0], color[1], color[2]);
     const low = color[2] > 50 ? "#000" : "#fff";
     results.innerHTML += `<div class="box" style="background:${clrHex}; color: ${low};font-size:12px;">
-            <p>hex-${clrHex}</p> <p>rgb(${clrRGB})</p>
+            <p>hex-${clrHex}</p> <p>rgb(${clrRGB})</p><p>${color}</p>
       </div>`;
   });
-
-  displayVariations();
 }
+
+// Generate colors variations:
+function drawPalette2() {
+  const palette = generateVariations(GlobalColor[0], GlobalColor[1], GlobalColor[2]);
+  const allVaraitions = palette.map((clr) =>
+    generateShades(clr[0], clr[1], clr[2])
+  );
+  GlobalPallete = allVaraitions;
+  displayVariations2(allVaraitions);
+}
+
+function displayVariations2(palette) {
+  const varial = document.getElementById("variations");
+  varial.innerHTML = "";
+  for (let shades of palette) {
+    const divColor = document.createElement("div");
+    divColor.style = "display:grid; gap:0.4rem;"
+    varial.appendChild(divColor);
+    for (let color of shades) {
+      const divChild = document.createElement("div");
+      divChild.className = "boxes";
+      divChild.style.backgroundColor = hslToHex(color[0], color[1], color[2]);
+      divChild.textContent = color;
+      divColor.appendChild(divChild);
+    }
+    varial.appendChild(divColor);
+  }
+}
+
+document.getElementById("refresh").addEventListener("click",()=>{
+  GlobalColor= [0,50,50]
+  saturationElts.forEach(elt => elt.value = GlobalColor[1]);
+  hueElts.forEach(elt => elt.value = GlobalColor[0]);
+  lightElts.forEach(elt => elt.value = GlobalColor[2]);
+  changeMain(GlobalColor)
+});
+
+document.getElementById("generate").addEventListener("click", e => drawPalette2() );
+
 
 changeMain(GlobalColor);
 
-// Generate colors variations:
 
-function displayVariations() {
-  const numb = GlobalPallete.length;
-  const varial = document.getElementById("variations");
-  varial.innerHTML = "";
+document.getElementById("propose").addEventListener("click", () => generateProposals());
 
-  for (let j = 0; j < numb; j++) {
-    const colors = generateTones(
-      GlobalPallete[j][0], GlobalPallete[j][1], GlobalPallete[j][2]
-    );
-    const divColor = document.createElement("div");
-    const clrHex = hslToHex(GlobalPallete[j][0], GlobalPallete[j][1], GlobalPallete[j][2]);
-    divColor.className = "boxes";
-    divColor.textContent = j+ " "+ clrHex;
-    divColor.style.backgroundColor = clrHex;
-    varial.appendChild(divColor);
-    for (let cell of colors) {
-      const divChild = document.createElement("div");
-      divChild.className = "boxes";
-      divChild.style.backgroundColor = cell;
-      divChild.textContent = cell;
-      varial.appendChild(divChild);
+function generateProposals () {
+  const pil = document.getElementById("proposals");
+  pil.innerHTML = "";
+
+  if( GlobalScheme &&  GlobalPallete.length > 0 ) {
+
+    const Variations = colorSort(GlobalPallete,GlobalColor);
+    const list = Object.keys(Variations);
+
+    for( let scheme of list ) {
+
+      const h = document.createElement("h3");
+      h.textContent = scheme;
+      pil.appendChild(h);
+
+      const container = document.createElement("div");
+      container.style = "display:flex;gap:0.2rem;justify-content:center;align-items:center;";
+      const b = Variations[scheme];
+      b.forEach( clr => {
+        const boxy = document.createElement("div");
+        // boxy.style = `display:flex;justify-content:center;align-items:center;height:78px;width:110px;color:${clr[2] > 50 ? "#000":"#fff"}`;
+        boxy.style = `height:78px;width:110px;color:${clr[2] > 50 ? "#000":"#fff"}`;
+        boxy.textContent = clr;
+        boxy.className = "boxes";
+        boxy.style.backgroundColor = hslToHex(...clr);
+        container.appendChild(boxy);
+      });
+      pil.appendChild(container);
     }
+  } else {
+    alert("please generate the palette")
   }
+  return ;
 }
