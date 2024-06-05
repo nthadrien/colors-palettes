@@ -6,7 +6,7 @@ import {
   hslToRgb,
 } from "./conversions.js";
 
-import { generateShades, generateVariations } from "./generateVariations.js";
+import { generateShades, generateVariations, generateVariationsTwo } from "./generateVariations.js";
 
 import {
   generateAnaloguePalette,
@@ -74,7 +74,7 @@ schemes.forEach((elt) =>
   elt.addEventListener("change", (e) => {
     let paletto = [];
     switch (e.target.value) {
-      case "analogous":
+      case "analogue":
         paletto = generateAnaloguePalette(...GlobalColor);
         break;
       case "monochrome":
@@ -116,8 +116,17 @@ function drawColors(colors) {
 }
 
 // Generate colors variations:
-function drawPalette2() {
+function drawPalette1() {
   const palette = generateVariations(GlobalColor[0], GlobalColor[1], GlobalColor[2]);
+  const allVaraitions = palette.map((clr) =>
+    generateShades(clr[0], clr[1], clr[2])
+  );
+  GlobalPallete = allVaraitions;
+  displayVariations2(allVaraitions);
+}
+
+function drawPalette2() {
+  const palette = generateVariationsTwo(GlobalColor[0], GlobalColor[1], GlobalColor[2]);
   const allVaraitions = palette.map((clr) =>
     generateShades(clr[0], clr[1], clr[2])
   );
@@ -151,7 +160,9 @@ document.getElementById("refresh").addEventListener("click",()=>{
   changeMain(GlobalColor)
 });
 
-document.getElementById("generate").addEventListener("click", e => drawPalette2() );
+document.getElementById("generate").addEventListener("click", e => drawPalette1() );
+document.getElementById("generate-two").addEventListener("click", e => drawPalette2() );
+
 
 
 changeMain(GlobalColor);

@@ -7,7 +7,8 @@ var schemo = { definition: "", pros: "", cons: "" };
 // filter list
 document.getElementsByName("scheme").forEach((elt) =>
   elt.addEventListener("click", function (e) {
-    if (e.target.checked) schemo = data[e.target.value];
+    const name = e.target.value;
+    if (e.target.checked) schemo = data[name];
   })
 );
 

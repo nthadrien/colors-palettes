@@ -138,6 +138,7 @@ a:hover {
   flex-flow: row wrap;
   justify-content: flex-start;
   align-items: flex-start;
+  gap: 0.3rem;
   /* box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19); */
   font-size: 12px;
   width: 98%;
@@ -225,6 +226,21 @@ ul {
   width: 100%;
 }
 
+.lg-screen {
+  display: none;
+  flex-flow: row wrap;
+  justify-content: flex-start;
+  align-items: flex-start;
+  gap: 1em;
+  width: 100%;
+  margin: 1rem auto;
+  font-size: smaller;
+}
+
+.btn:active {
+  outline: 2px dashed cyan;
+}
+
 /* grid 2 */
 main {
   display: grid;
@@ -251,6 +267,10 @@ main {
     align-self: start;
     position: sticky;
     top: 3rem;
+  }
+
+  .lg-screen {
+    display: flex;
   }
 }
 

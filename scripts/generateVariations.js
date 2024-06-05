@@ -1,13 +1,30 @@
-
-
 export const generateVariations = (h, s, l) => {
+  const palette = [];
+  const radius = Math.sqrt(l * l + s * s);
+  palette[4] = [h, s, l];
+  let i = 0;
+  while (i <= 8) {
+    const s_radius = Math.round(Math.random() * radius) % 100;
+    const l_radius = Math.round(Math.random() * radius) % 100;
+    const h_radius = (30 * i + h) % 360;
+    const isValid =
+      Math.sqrt(s_radius * s_radius + l_radius * l_radius) !== radius;
+    if (isValid) {
+      palette[i] = [h_radius, s_radius, l_radius];
+      i++;
+    }
+  }
+  return palette;
+};
+
+export const generateVariationsTwo = (h, s, l) => {
   const palette = [];
   const radius = Math.sqrt(l * l + 2 * s * s);
   palette[4] = [h, s, l];
   let i = 0;
   while (i <= 8) {
-    const s_radius = Math.round(Math.random() * radius) %100;
-    const l_radius = Math.round(Math.random() * radius) %100;
+    const s_radius = Math.round(Math.random() * radius) % 100;
+    const l_radius = Math.round(Math.random() * radius) % 100;
     const h_radius = (30 * i + h) % 360;
     const isValid =
       Math.sqrt(2 * s_radius * s_radius + l_radius * l_radius) !== radius;

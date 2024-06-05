@@ -3,9 +3,10 @@
 export function generateMonochromePalette(h, s, l) {
   let palette = [];
   palette[0] = [h, s, l];
-  palette[1] = [h, s, (l + 30) % 100];
-  palette[2] = [h, s, (l + 40) % 100];
-  palette[3] = [h, s, (l + 60) % 100];
+  palette[1] = [h, Math.round(s*0.2), (l + 30) % 100];
+  palette[2] = [h, Math.round(s*0.4), (l + 50) % 100];
+  palette[3] = [h, Math.round(s*0.6), (l + 70) % 100];
+  palette[4] = [h, Math.round(s*0.8), (l + 90) % 100];
   return palette;
 }
 

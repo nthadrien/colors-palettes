@@ -10,9 +10,10 @@
   <body>
     <!-- nav bar -->
     <nav>
-      <h2>C-Picker v0.1.2</h2>
+      <h2>C-Picker v0.1.5</h2>
       <button id="hamburger"></button>
     </nav>
+
     <div class="nav-menu">
       <a href="/">Palette Generator</a>
       <a href="/picture.html">Picture Color</a>
@@ -20,7 +21,6 @@
       <a href="/about.html">About Color</a>
       <a href="/"> Contact us</a>
     </div>
-
     <!-- main body -->
     <main>
       <div class="card">
@@ -35,8 +35,21 @@
         <input name="light" type="range" value="50" min="0" max="100" />
         <input name="light" type="number" value="0" min="0" max="100" />
 
-        <button id="refresh" title="refresh" class="btn" style="margin-left: 1rem">↺</button>
-        <button id="generate" title="generate colors" class="btn" style="margin-left: 1rem">Generate</button>
+        <button id="refresh" title="refresh" class="btn">↺</button>
+        <button id="generate" title="generate colors" class="btn">Generate 1</button>
+        <button id="generate-two" title="generate colors" class="btn">Generate 2</button>
+        <button id="generate-three" title="generate colors" class="btn">Fibonacci</button>
+
+        <div class="lg-screen">
+          <h2>Tones Formulas</h2>
+          <p>Neutral: </p>
+          <p>Pastels: </p>
+          <p>Earth: </p>
+          <p>Jewel: </p>
+          <p>Fluorescent: </p>
+          <p>Shades: </p>
+
+        </div>
       </div>
 
       <section>
@@ -57,10 +70,10 @@
           <div class="flexo">
             <label>
               monochrome
-              <input type="radio" name="scheme" value="monochrome" checked
+              <input type="radio" name="scheme" value="monochrome"
             /></label>
             <label>
-              analogous <input type="radio" name="scheme" value="analogous"
+              analogous <input type="radio" name="scheme" value="analogue"
             /></label>
             <label>
               complementary

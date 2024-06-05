@@ -17,8 +17,16 @@ export const colorSort = (pallete, color ) => {
     pallete.forEach(row =>  row.forEach(
         clr => {
             const he = clr[0];
+            // monochromatic
+            if ( he === hue-5 ) monochrome.push(clr);
             if ( he === hue ) monochrome.push(clr);
+            if ( he === hue + 5 ) monochrome.push(clr);
+
+            // analogous
+            if(  he === (hue + 35)%360 || he === Math.abs(30+5-hue) ) analogous.push(clr);
             if(  he === (hue + 30)%360 || he === Math.abs(30-hue) ) analogous.push(clr);
+            if(  he === (hue - 35)%360 || he === Math.abs(30-5-hue) ) analogous.push(clr);
+
             if ( he === (hue + 180) ) complementary.push(clr);
             if ( he === (hue + 150)%360 || he === (hue + 210)%360) split_complementary.push(clr);
             if ( he === (hue + 120)%360 || he === (hue + 240)%360) triadic.push(clr);
