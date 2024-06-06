@@ -6,7 +6,7 @@ import {
   hslToRgb,
 } from "./conversions.js";
 
-import { generateShades, generateVariations, generateVariationsTwo } from "./generateVariations.js";
+import { generateVariations, generateVariationsFibonacci, generateVariationsTwo } from "./generateVariations.js";
 
 import {
   generateAnaloguePalette,
@@ -17,7 +17,6 @@ import {
   generateTetriadicPalette,
   generateRectanglePalette,
 } from "./colorSchemes.js";
-import { generateTones } from "./generateTones.js";
 import { colorSort } from "./sortingColors.js";
 
 var GlobalColor = [0, 90, 50];
@@ -118,28 +117,31 @@ function drawColors(colors) {
 // Generate colors variations:
 function drawPalette1() {
   const palette = generateVariations(GlobalColor[0], GlobalColor[1], GlobalColor[2]);
-  const allVaraitions = palette.map((clr) =>
-    generateShades(clr[0], clr[1], clr[2])
-  );
-  GlobalPallete = allVaraitions;
-  displayVariations2(allVaraitions);
+  GlobalPallete = palette;
+  displayVariations(palette);
 }
 
 function drawPalette2() {
   const palette = generateVariationsTwo(GlobalColor[0], GlobalColor[1], GlobalColor[2]);
-  const allVaraitions = palette.map((clr) =>
-    generateShades(clr[0], clr[1], clr[2])
-  );
-  GlobalPallete = allVaraitions;
-  displayVariations2(allVaraitions);
+  GlobalPallete = palette;
+  displayVariations(palette);
 }
 
-function displayVariations2(palette) {
+
+function drawPalettefibo() {
+  const palette = generateVariationsFibonacci(GlobalColor[0], GlobalColor[1], GlobalColor[2]);
+  GlobalPallete = palette;
+  displayVariations(palette);
+}
+
+// display all variations
+
+function displayVariations(palette) {
   const varial = document.getElementById("variations");
   varial.innerHTML = "";
   for (let shades of palette) {
     const divColor = document.createElement("div");
-    divColor.style = "display:grid; gap:0.4rem;"
+    divColor.style = "display:grid; gap:0.2rem;"
     varial.appendChild(divColor);
     for (let color of shades) {
       const divChild = document.createElement("div");
@@ -162,11 +164,7 @@ document.getElementById("refresh").addEventListener("click",()=>{
 
 document.getElementById("generate").addEventListener("click", e => drawPalette1() );
 document.getElementById("generate-two").addEventListener("click", e => drawPalette2() );
-
-
-
-changeMain(GlobalColor);
-
+document.getElementById("generate-three").addEventListener("click", e => drawPalettefibo() );
 
 document.getElementById("propose").addEventListener("click", () => generateProposals());
 
@@ -204,3 +202,5 @@ function generateProposals () {
   }
   return ;
 }
+
+changeMain(GlobalColor);

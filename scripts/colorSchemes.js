@@ -76,9 +76,9 @@ export function generateRectanglePalette(h, s, l) {
   let h1,
     h2,
     h3 = 0;
-  h1 = (h + 90) % 360;
-  h2 = (h + 160) % 360;
-  h3 = (h + 270) % 360;
+  h1 = (h + 60) % 360;
+  h2 = (h + 180) % 360;
+  h3 = (h + 240) % 360;
   palette[0] = [h, s, l];
   palette[1] = [h1, s, l];
   palette[2] = [h2, s, l];
