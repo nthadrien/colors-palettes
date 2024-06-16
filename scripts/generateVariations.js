@@ -13,7 +13,7 @@ export const generateVariations = (h, s, l) => {
     palette[i] = [h_radius, s, l];
     i++;
   }
-  return palette.map((clr) => generateShades2(clr[0], clr[1], clr[2]));
+  return palette.map((clr) => generateShades(clr[0], clr[1], clr[2]));
 };
 
 export const generateVariationsTwo = (h, s, l) => {
@@ -46,17 +46,6 @@ export const generateVariationsFibonacci = (h, s, l) => {
 };
 
 export const generateShades = (h, s, l) => {
-
-  const s1 = (100 + s - 24) % 100;
-  const l1 = (h + lights[rando(6)]) % 100;
-
-  return [
-    [h, s1, l1],
-    [h, s, l],
-  ];
-};
-
-export const generateShades2 = (h, s, l) => {
 
   const s1 = (s + saturations[rando(8)]) % 100;
   const l1 = (h + lights[rando(6)]) % 100;

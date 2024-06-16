@@ -118,40 +118,20 @@ function drawColors(colors) {
 function drawPalette1() {
   const palette = generateVariations(GlobalColor[0], GlobalColor[1], GlobalColor[2]);
   GlobalPallete = palette;
-  displayVariations(palette);
+  generateProposals();
 }
 
 function drawPalette2() {
   const palette = generateVariationsTwo(GlobalColor[0], GlobalColor[1], GlobalColor[2]);
   GlobalPallete = palette;
-  displayVariations(palette);
+  generateProposals();
 }
 
 
 function drawPalettefibo() {
   const palette = generateVariationsFibonacci(GlobalColor[0], GlobalColor[1], GlobalColor[2]);
   GlobalPallete = palette;
-  displayVariations(palette);
-}
-
-// display all variations
-
-function displayVariations(palette) {
-  const varial = document.getElementById("variations");
-  varial.innerHTML = "";
-  for (let shades of palette) {
-    const divColor = document.createElement("div");
-    divColor.style = "display:grid; gap:0.2rem;"
-    varial.appendChild(divColor);
-    for (let color of shades) {
-      const divChild = document.createElement("div");
-      divChild.className = "boxes";
-      divChild.style.backgroundColor = hslToHex(color[0], color[1], color[2]);
-      divChild.textContent = color;
-      divColor.appendChild(divChild);
-    }
-    varial.appendChild(divColor);
-  }
+  generateProposals();
 }
 
 document.getElementById("refresh").addEventListener("click",()=>{
@@ -165,8 +145,6 @@ document.getElementById("refresh").addEventListener("click",()=>{
 document.getElementById("generate").addEventListener("click", e => drawPalette1() );
 document.getElementById("generate-two").addEventListener("click", e => drawPalette2() );
 document.getElementById("generate-three").addEventListener("click", e => drawPalettefibo() );
-
-document.getElementById("propose").addEventListener("click", () => generateProposals());
 
 function generateProposals () {
   const pil = document.getElementById("proposals");
@@ -188,7 +166,6 @@ function generateProposals () {
       const b = Variations[scheme];
       b.forEach( clr => {
         const boxy = document.createElement("div");
-        // boxy.style = `display:flex;justify-content:center;align-items:center;height:78px;width:110px;color:${clr[2] > 50 ? "#000":"#fff"}`;
         boxy.style = `height:78px;width:110px;color:${clr[2] > 50 ? "#000":"#fff"}`;
         boxy.textContent = clr;
         boxy.className = "boxes";
