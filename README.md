@@ -38,3 +38,22 @@ We welcome contributions to the Color Picker project. If you have any ideas, bug
 
 ## License
 The Color Picker is released under the [MIT License](LICENSE).
+
+
+## Tasks
+
+[x] Color Pallete Generator (done)
+    [x] fibonacci
+    [x] Math Interpolation
+    [x] Newton Raphson
+    
+[x] Picture color Generator (done)
+
+[x]  Color Converter (On going)
+    []  Hwx
+    []  Rgb
+    []  Hsl
+    []  Hsb / Hsv
+
+[]  Bref Docs on the App
+[]  Resources link

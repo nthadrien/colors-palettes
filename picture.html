@@ -27,7 +27,7 @@
     <main>
       <!-- first section: Picture color picker -->
       <div class="card">
-        <canvas id="canvas"></canvas>
+        <canvas id="canvas" height="320"></canvas>
 
         <label>
           Please insert image here
@@ -38,17 +38,13 @@
             class="image"
           />
         </label>
+
+        <button class="btn generate">Get Colors</button>
       </div>
 
       <!-- Second section results and interactions -->
 
       <section>
-        <p>
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Rem, dolorem
-          nesciunt ipsa illum beatae vero quisquam nihil unde rerum labore
-          voluptatem itaque. Quisquam eius nisi odit voluptate dolorem commodi
-          obcaecati.
-        </p>
 
         <h2>Color Picked</h2>
 
@@ -59,9 +55,10 @@
         </div>
 
         <section>
-          <h2>Palette From Pictue</h2>
-          <section id="proposals"></section>
+          <h2>Colors From Pictue</h2>
+          <section id="pic-colors"></section>
         </section>
+
       </section>
     </main>
 
