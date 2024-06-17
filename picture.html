@@ -1,26 +1,75 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
     <link rel="stylesheet" href="./styles/picker.css" />
-</head>
-<body>
+  </head>
+  <body>
+    <!-- nav bar -->
+
     <nav>
-        <h1>Color Picker</h1>
-  
-        <button id="hamburger"></button>
-  
-        <div class="nav-menu">
-          <a href="/">Palette Generator</a>
-          <a href="/picture">Picture Color</a>
-          <a href="/picture">Converter Color</a>
-          <a href="/about.html">About Color</a>
-          <a href="/"> Contact us</a>
+      <h2>C-Picker v0.6</h2>
+      <button id="hamburger"></button>
+    </nav>
+
+    <div class="nav-menu">
+      <a href="/">Palette Generator</a>
+      <a href="/picture.html">Picture Color</a>
+      <a href="/converter.html">Converter Color</a>
+      <a href="/about.html">About Color</a>
+      <a href="/"> Contact us</a>
+    </div>
+
+    <!-- main body -->
+    <main>
+      <!-- first section: Picture color picker -->
+      <div class="card">
+        <canvas id="canvas"></canvas>
+
+        <label>
+          Please insert image here
+          <input
+            type="file"
+            accept=".png, .jpg, .jpeg,.wepb"
+            id="imgSource"
+            class="image"
+          />
+        </label>
+      </div>
+
+      <!-- Second section results and interactions -->
+
+      <section>
+        <p>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Rem, dolorem
+          nesciunt ipsa illum beatae vero quisquam nihil unde rerum labore
+          voluptatem itaque. Quisquam eius nisi odit voluptate dolorem commodi
+          obcaecati.
+        </p>
+
+        <h2>Color Picked</h2>
+
+        <div id="picked" class="box">
+          <p>#00000</p>
+          <p>rgb(0,0,0)</p>
+          <p>hsl: 0,0,0</p>
         </div>
-      </nav>
-    
-</body>
+
+        <section>
+          <h2>Palette From Pictue</h2>
+          <section id="proposals"></section>
+        </section>
+      </section>
+    </main>
+
+    <footer>
+      &copy; Copyrights - All rights reserved <i>intuitive axis</i> 2024-2025
+    </footer>
+
+    <script type="module" src="./scripts/colorPicker.js" defer></script>
+    <script type="module" src="./scripts/nav.js" async></script>
+  </body>
 </html>

@@ -80,6 +80,18 @@ a:hover {
   font-weight: bolder;
 }
 
+canvas {
+  cursor: crosshair;
+  width: 100%;
+  min-height: 270px;
+  border-radius: 8px;
+  border: 1px solid #ddd;
+}
+
+input[type="file"] {
+  visibility: hidden;
+}
+
 #hamburger {
   height: 38px;
   width: 38px;
@@ -248,6 +260,7 @@ main {
   margin: 0 auto;
   position: relative;
   max-width: 1300px;
+  min-height: 65vh;
 }
 
 @media (min-width: 768px) {
