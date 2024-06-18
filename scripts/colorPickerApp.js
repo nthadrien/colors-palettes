@@ -1,9 +1,7 @@
 import { rgbToHsl } from "./conversions.js";
 
 const canvas = document.getElementById("canvas");
-const ctx = canvas.getContext("2d", {
-  willReadFrequently: true,
-});
+const ctx = canvas.getContext("2d", {willReadFrequently: true});
 
 const imgSrc = document.getElementById("imgSource");
 const destination = document.getElementById("picked");

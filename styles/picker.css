@@ -84,6 +84,11 @@ input[type="file"] {
   visibility: hidden;
 }
 
+ol {
+  list-style-type: lower-latin;
+  padding-left: 1.2rem;
+}
+
 #hamburger {
   height: 38px;
   width: 38px;
@@ -138,8 +143,8 @@ input[type="file"] {
   display: flex;
   flex-flow: row wrap;
   justify-content: flex-start;
-  align-items: flex-start;
-  gap: 0.3rem;
+  align-items: center;
+  gap: 0.6rem;
   /* box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19); */
   font-size: 12px;
   width: 98%;
@@ -247,6 +252,14 @@ ul {
   grid-template-columns: repeat(4,1fr);
   font-size: small;
   gap: 0.3em;
+}
+
+input[name="input-color"] {
+  height: 32px;
+  padding-left: 12px ;
+  border-radius: 5px;
+  border: 1px solid #ddd;
+  outline: none;
 }
 
 /* grid 2 */

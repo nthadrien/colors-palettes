@@ -51,9 +51,9 @@ The Color Picker is released under the [MIT License](LICENSE).
 
 [x]  Color Converter (On going)
     []  Hwx
-    []  Rgb
-    []  Hsl
-    []  Hsb / Hsv
+    [x]  Rgb
+    [x]  Hsl
+    [x]  Hsb / Hsv
 
 []  Bref Docs on the App
 []  Resources link
