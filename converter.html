@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="./styles/picker.css" />
+    <style>
+      p {
+        box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+      }
+
+      main {
+        max-width: 1100px;
+      }
+    </style>
+  </head>
+
+  <body>
+    <!-- nav bar -->
+    <nav>
+      <h2>C-Picker v0.9</h2>
+      <button id="hamburger"></button>
+    </nav>
+
+    <div class="nav-menu">
+      <a href="/">Palette Generator</a>
+      <a href="/picture.html">Picture Color</a>
+      <a href="/converter.html">Converter Color</a>
+      <a href="/about.html">About Color</a>
+      <a href="/"> Contact us</a>
+    </div>
+    <!-- main content -->
+
+    <main>
+      <div class="card">
+        <div id="main-color" class="box"></div>
+
+        <span>Color</span>
+        <input
+          type="text"
+          name="input-color"
+          placeholder="insert the color"
+          required
+        />
+
+        <p style="width: 100%; box-shadow: none;">
+          <b>Hint: </b>Write the full color code of the color you which to
+          convert: hsl(340, 100%, 33% ), rgb( 23,233,12) , #2347830
+        </p>
+      </div>
+
+      <section>
+        <h2>Color Converter</h2>
+
+        <div id="resu"> </div>
+      </section>
+    </main>
+
+    <!-- footer -->
+    <footer>
+      &copy; Copyrights - All rights reserved <i>intuitive axis</i> 2024-2025
+    </footer>
+  </body>
+  <script src="./scripts/nav.js" type="module" defer></script>
+  <script src="./scripts/converterApp.js" type="module" async></script>
+</html>

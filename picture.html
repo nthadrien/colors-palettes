@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="./styles/picker.css" />
+  </head>
+  <body>
+    <!-- nav bar -->
+
+    <nav>
+      <h2>C-Picker v0.9</h2>
+      <button id="hamburger"></button>
+    </nav>
+
+    <div class="nav-menu">
+      <a href="/">Palette Generator</a>
+      <a href="/picture.html">Picture Color</a>
+      <a href="/converter.html">Converter Color</a>
+      <a href="/about.html">About Color</a>
+      <a href="/"> Contact us</a>
+    </div>
+
+    <!-- main body -->
+    <main>
+      <!-- first section: Picture color picker -->
+      <div class="card">
+        <canvas id="canvas" height="320"></canvas>
+
+        <label>
+          Please insert image here
+          <input
+            type="file"
+            accept=".png, .jpg, .jpeg,.wepb"
+            id="imgSource"
+            class="image"
+          />
+        </label>
+      </div>
+
+      <!-- Second section results and interactions -->
+      <section>
+        <h2>Color Picked</h2>
+
+        <div id="picked" class="box">
+          <p>#00000</p>
+          <p>rgb(0,0,0)</p>
+          <p>hsl: 0,0,0</p>
+        </div>
+
+        <section>
+          <h2>Colors From Pictue</h2>
+          <section id="pic-colors"></section>
+        </section>
+      </section>
+    </main>
+
+    <section style="padding: 1rem">
+      <h2>Functionalities</h2>
+
+      <p>Many color picker apps offer additional features, such as:</p>
+
+      <ol>
+        
+        <li>
+          Color preview: The app may provide a live preview of the selected
+          color, showing how it would appear in different contexts or on various
+          backgrounds.
+        </li>
+
+        <li>
+          Color adjustment: Users can often adjust the hue, saturation, and
+          brightness of the selected color by using sliders or other controls.
+        </li>
+
+        <li>
+          Color history: The app may keep track of recently used colors,
+          allowing users to quickly access and reuse them.
+        </li>
+
+        <li>
+          Color information: The app may provide detailed information about the
+          selected color, such as its name, complementary colors, and color
+          theory principles.
+        </li>
+
+        <li>
+          Color sharing: Users can typically share the selected color with
+          others by copying its color code or exporting it to various file
+          formats.
+        </li>
+
+      </ol>
+
+      <p>
+        Color picker apps are widely used by designers, artists, developers, and
+      anyone who needs to work with color, as they provide a convenient and
+      efficient way to explore and select colors for various projects or
+      applications.
+      </p>
+    </section>
+
+    <footer>
+      &copy; Copyrights - All rights reserved <i>intuitive axis</i> 2024-2025
+    </footer>
+
+    <script type="module" src="./scripts/colorPickerApp.js" defer></script>
+    <script type="module" src="./scripts/nav.js" async></script>
+  </body>
+</html>
