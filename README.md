@@ -55,5 +55,23 @@ The Color Picker is released under the [MIT License](LICENSE).
     [x]  Hsl
     [x]  Hsb / Hsv
 
-[]  Bref Docs on the App
-[]  Resources link
+[]  Bref Docs on the App (ongoing)
+[]  Resources link (ongoing)
+
+
+# Changelog
+
+## v1.0 ^_-
+
+-   Added Default color schemes manual change by users
+-   Changed App Layout: it is now 3 columns for large Screens
+-   Please let us know if you encounter any bugs
+
+##  v0.9 ^u^
+-   Added Color Converter 
+
+##  v0.8 -_-
+-   Added Color Picker 
+
+##  v0.5  (!'.' )
+-   Added Fibonnacci Color Generator 

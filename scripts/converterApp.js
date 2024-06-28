@@ -52,12 +52,10 @@ window.onload = () => {
       const po = document.createElement("P");
       po.textContent = modelo + ": " + conversions[modelo];
       po.style =
-        "padding:1rem; border-left: 3px solid" +
+        "padding:1rem; border-left: 5px solid" +
         hex +
         ";border-radius: 6px;margin: 1rem 0;";
       result.appendChild(po);
     }
-
-    console.log(result);
   };
 };

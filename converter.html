@@ -8,11 +8,13 @@
     <link rel="stylesheet" href="./styles/picker.css" />
     <style>
       p {
-        box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+        box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 9px;
       }
 
-      main {
-        max-width: 1100px;
+      aside {
+        display: grid;
+        gap: 1rem;
+        padding: 1rem;
       }
     </style>
   </head>
@@ -20,21 +22,13 @@
   <body>
     <!-- nav bar -->
     <nav>
-      <h2>C-Picker v0.9</h2>
+      <h2>C-Picker v1.0</h2>
       <button id="hamburger"></button>
     </nav>
-
-    <div class="nav-menu">
-      <a href="/">Palette Generator</a>
-      <a href="/picture.html">Picture Color</a>
-      <a href="/converter.html">Converter Color</a>
-      <a href="/about.html">About Color</a>
-      <a href="/"> Contact us</a>
-    </div>
     <!-- main content -->
 
     <main>
-      <div class="card">
+      <aside>
         <div id="main-color" class="box"></div>
 
         <span>Color</span>
@@ -44,18 +38,26 @@
           placeholder="insert the color"
           required
         />
-
-        <p style="width: 100%; box-shadow: none;">
+        
+        <summary>
           <b>Hint: </b>Write the full color code of the color you which to
           convert: hsl(340, 100%, 33% ), rgb( 23,233,12) , #2347830
-        </p>
-      </div>
+        </summary>
+      </aside>
 
-      <section>
+      <aside style="width: 100%;">
         <h2>Color Converter</h2>
-
         <div id="resu"> </div>
-      </section>
+      </aside>
+
+      <!-- rest of navbar -->
+      <div class="nav-menu">
+        <a href="/">Palette Generator</a>
+        <a href="/picture.html">Picture Color</a>
+        <a href="/converter.html">Converter Color</a>
+        <a href="/about.html">About Color</a>
+        <a href="/"> Contact us</a>
+      </div>
     </main>
 
     <!-- footer -->
