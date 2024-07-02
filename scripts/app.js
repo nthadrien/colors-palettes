@@ -225,6 +225,8 @@ window.onload = () => {
       const txtClr = colors[2] <= 50 ? "white" : "black";
       e.target.parentNode.children[0].style = `background-color: ${clrHex}; color: ${txtClr}`;
       e.target.parentNode.children[0].textContent = clrHex
+      e.target.parentNode.children[2].value = e.target.value;
+      e.target.parentNode.children[3].value = e.target.value;
     });
   });
 
@@ -243,7 +245,9 @@ window.onload = () => {
       const clrHex = hslToHex(...colors);
       const txtClr = colors[2] <= 50 ? "white" : "black";
       e.target.parentNode.children[0].style = `background-color: ${clrHex}; color: ${txtClr}`;
-      e.target.parentNode.children[0].textContent = clrHex
+      e.target.parentNode.children[0].textContent = clrHex;
+      e.target.parentNode.children[5].value = e.target.value;
+      e.target.parentNode.children[6].value = e.target.value;
     });
   });
 };
