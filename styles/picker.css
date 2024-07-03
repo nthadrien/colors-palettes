@@ -17,6 +17,7 @@ section {
   justify-content: center;
   align-items: center;
   gap: 2rem;
+  padding: 0.3rem;
   width: 100%;
 }
 
@@ -187,7 +188,6 @@ select {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  font-weight: bold;
   text-shadow: 3px 3px 4px #ddd;
 }
 
@@ -227,6 +227,8 @@ select {
   padding: 1rem;
   width: 100%;
   gap: 0.5rem;
+  position: static;
+  min-height: 80vh;
 }
 
 .clr-card > div, .card .box {
@@ -253,6 +255,12 @@ select {
   grid-template-columns: repeat(4,1fr);
   font-size: small;
   gap: 0.3em;
+}
+
+.proposal-row {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: center;
 }
 
 input[name="input-color"] {
@@ -307,10 +315,6 @@ main {
   main {
     grid-template-columns: minmax(280px, 420px ) 2fr;
   }
-
-  /* main .card {
-    border-right: 1px solid #ddd;
-  } */
 
   .editable {
     grid-template-columns: repeat( auto-fit , minmax( 200px, 160px));

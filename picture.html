@@ -6,18 +6,25 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
     <link rel="stylesheet" href="./styles/picker.css" />
+    <style>
+      aside {
+        display: flex;
+        flex-direction: column;
+        gap: 0.8em;
+        padding: 1em;
+      }
+    </style>
   </head>
   <body>
     <!-- nav bar -->
-
     <nav>
-      <h2>C-Picker v1.0</h2>
+      <h2>C-Picker v1.1</h2>
       <button id="hamburger"></button>
     </nav>
     <!-- main body -->
     <main>
       <!-- first section: Picture color picker -->
-      <section style="border-right: 1px solid #ddd">
+      <aside>
         <canvas id="canvas" height="320"></canvas>
         <label>
           Please insert image here
@@ -28,7 +35,7 @@
             class="image"
           />
         </label>
-      </section>
+      </aside>
 
       <!-- Second section results and interactions -->
       <section>

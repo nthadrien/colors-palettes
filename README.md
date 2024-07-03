@@ -37,17 +37,19 @@ Make sure you disable CORS when using this app to get all the functionalities
 We welcome contributions to the Color Picker project. If you have any ideas, bug reports, or feature requests, please feel free to open an issue or submit a pull request on our GitHub repository.
 
 ## License
-The Color Picker is released under the [MIT License](LICENSE).
+The Color Picker is released under the [Apache](./license.md).
 
 
 ## Tasks
 
-[x] Color Pallete Generator (done)
-    [x] fibonacci
-    [x] Math Interpolation
-    [x] Newton Raphson
+-   [x] Color Pallete Generator (done)
+-   -   [x] fibonacci
+-   -   [x] Math Interpolation
+-   -   [x] Newton Raphson
     
-[x] Picture color Generator (done)
+-   [x] Picture color Generator (done)
+-   -   [X] Error Minimization
+-   -   []  Fast Color sorting 
 
 [x]  Color Converter (On going)
     []  Hwx
@@ -55,8 +57,9 @@ The Color Picker is released under the [MIT License](LICENSE).
     [x]  Hsl
     [x]  Hsb / Hsv
 
-[]  Bref Docs on the App (ongoing)
-[]  Resources link (ongoing)
+-   []  Bref Docs on the App (ongoing)
+-   []  Resources link (ongoing)
+-   []  Light and Dark mode
 
 
 # Changelog
@@ -66,12 +69,22 @@ The Color Picker is released under the [MIT License](LICENSE).
 -   Added Default color schemes manual change by users
 -   Changed App Layout: it is now 3 columns for large Screens
 -   Please let us know if you encounter any bugs
+#### Bugs Reported & Fixed
+-   [x]  Small screen responsiveness
+-   [x]  Misaligned Navbar for iphone-XS, Samsung S8 edge
+-   []  Color Accuracy of Conversion: Sometimes decimals are shown and this is ambigous
 
 ##  v0.9 ^u^
 -   Added Color Converter 
+#### Bugs Reported & Fixed
+-   [x]  Misaligned Navbar for iphone-11 pro, Samsung : S6, S9, S10; Xiaomi note 9 pro, 
+-   []  Color Accuracy of Conversion: Sometimes decimals are shown and this is ambigous
 
 ##  v0.8 -_-
 -   Added Color Picker 
 
 ##  v0.5  (!'.' )
 -   Added Fibonnacci Color Generator 
+
+
+
